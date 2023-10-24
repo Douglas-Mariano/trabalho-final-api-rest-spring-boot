@@ -1,0 +1,61 @@
+# BUSCA TODAS AS CATEGORIAS
+GET http://localhost:8080/categorias
+###
+
+# BUSCA CATEGORIA POR ID 
+GET http://localhost:8080/categorias/2
+###
+
+# ADICIONAR UMA NOVA CATEGORIA (PRECISA DE PERMISÃO ADMIN) 
+POST http://localhost:8080/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "nmCategoria": "Vestuário",
+    "descricao": "Roupas e acessórios",
+    "statusCate": true
+}
+###
+
+# ADICIONAR UMA NOVA CATEGORIA (PRECISA DE PERMISÃO ADMIN)
+POST http://localhost:8080/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{    
+    "nmCategoria": "Carros",
+    "descricao": "Carros super velozes",
+    "statusCate": true
+}
+###
+
+# ATUALIZAR CATEGORIA PELO ID (PRECISA DE PERMISÃO ADMIN)
+PUT http://localhost:8080/categorias/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "nmCategoria": "VestuárioAtualizado",
+    "descricao": "Roupas e acessórios",
+    "statusCate": true
+}
+###
+
+# ATUALIZA CATEGORIA PELLE ID (PRECISA DE PERMISÃO ADMIN) - EXEMPLO DANDO FALSE 
+PUT http://localhost:8080/categorias/2
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{    
+    "nmCategoria": "Alimentos",
+    "descricao": "Alimento para alimentar os que precisam de alimento",
+    "statusCate": false
+}
+###
+
+# FAZ O DELETE DE UMA CATEGORIA (DELETE LOGICO - DESATIVA A CATEGORIA - STATUS FALSE)
+DELETE http://localhost:8080/categorias/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+###

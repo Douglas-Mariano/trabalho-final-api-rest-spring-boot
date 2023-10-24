@@ -1,0 +1,62 @@
+# BUSCA TODOS OS PEDIDOS (PRECISA SER ADMIN)
+GET http://localhost:8080/pedidos
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+###
+
+# BUSCA UM PEDIDO ESPECIFICIO PELO ID (PRECISA SER ADMIN)
+GET http://localhost:8080/pedidos/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+###
+
+# CRIAR NOVO PEDIDO (PODE SER ADMIN OU CLIENTE)
+POST http://localhost:8080/pedidos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "descontoTotal": 5,
+    "acrescimoTotal": 0,
+    "formaPagamento": "PIX",
+    "idUsuario": 1,
+    "pedidoItens": [
+        {
+            "produto": {
+                "idProd": 1
+            },
+            "descProduto": 0,
+            "acresProduto": 0,
+            "quantidade": 1
+        }
+    ]
+}
+###
+
+# ATUALIZAR DADOS DO PEDIDO
+PUT http://localhost:8080/pedidos/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "descontoTotal": 30,
+    "acrescimoTotal": 10,
+    "formaPagamento": "PIX",
+    "pedidoItens": [
+        {
+            "produto": {
+                "idProd": 1
+            },
+            "descProduto": 0,
+            "acresProduto": 0,
+            "quantidade": 3
+        }
+    ]
+}
+###
+
+# DELETAR O PEDIDO POR ID (FUNCIONA POR CASCADE PEDIDO ITENS JUNTO)
+DELETE http://localhost:8080/pedidos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+###
+

@@ -1,0 +1,58 @@
+# BUSCA TODOS OS PRODUTOS 
+GET http://localhost:8080/produtos
+###
+
+# BUSCA UM PRODDUTO ESPECIFICO PELO ID 
+GET http://localhost:8080/produtos/1
+###
+
+# ADICIONA UM PRODUTO (PRECISA SER ADMIN) 
+POST http://localhost:8080/produtos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+  "nomeProd": "Camisetex0",
+  "valorProd": 50,
+  "estoqueProd": 10,
+  "descricaoProd": "Camisetex brabo",
+  "imgbase64Prod": "string",
+  "statusProd": true,
+  "idCategoria": 1
+}
+###
+
+# ADICIONA UM PRODUTO 2(PRECISA SER ADMIN)
+POST http://localhost:8080/produtos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "nomeProd": "Abobrinha",
+    "valorProd": "1700.50",
+    "estoqueProd": "10",
+    "statusProd": true,
+    "descricaoProd": "Abobrinha caríssima",
+    "idCategoria": 2
+}
+###
+
+# ATUALIZAR UM PRODUTO ESPECIFICO PELO ID (PRECISA SER ADMIN)
+PUT http://localhost:8080/produtos/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+
+{
+    "nomeProd": "ABROBINHAATUALIZADO",
+    "valorProd": 1700.5,
+    "estoqueProd": 100,
+    "statusProd": true,
+    "idCategoria": 1
+}
+###
+
+# FAZ O DELETE DE UMA PRODUTO (DELETE LOGICO - DESATIVA UM PRODUTO - STATUS FALSE)
+DELETE http://localhost:8080/produtos/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDg1ODMzLCJleHAiOjE2OTgxNzIyMzN9.LY0a01Gj5v1Xp0KGxlKZAG0JrJs5NHh3jDDUBlNLtjU
+###
